@@ -69,8 +69,8 @@ router.put('/:id', async (req, res) => {
         console.log('data updated');
         res.status(200).json(response);
     }
-    catch{
-        console.log(ero);
+    catch(err){
+        console.log(err);
         res.status(500).json({error: 'Internal Server Error'});
     }
 });
@@ -78,8 +78,8 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try{
         const personId = req.params.id;
-        const response = await Person.findByIdAndRemove(personId);
-        if(!response)
+        const response = await Person.findByIdAndDelete(personId);
+        if(! response)
         {
             return res.status(404).json({error: 'Person not Found' });
         }
@@ -87,9 +87,9 @@ router.delete('/:id', async (req, res) => {
         res.status(200).json({message: 'Person Data Deleted Successfully'});
 
     }
-    catch
+    catch(err)
     {
-        console.log(ero);
+        console.log(err);
         res.status(500).json({error: 'Internal Server Error'});
     }
     
