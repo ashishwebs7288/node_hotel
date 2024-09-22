@@ -50,10 +50,10 @@ const app = express()
 const db= require('./db')
 
 const bodyParser = require('body-parser');
-
+const dotenv = require('dotenv').config();
 app.use(bodyParser.json());
 // const MenuItem= require('./models/MenuItem');
-
+const PORT = process.env.PORT || 3000;
 app.get('/', function (req, res) {
   res.send('Hello World ttt')
 })
