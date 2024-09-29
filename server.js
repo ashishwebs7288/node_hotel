@@ -55,7 +55,7 @@ app.use(bodyParser.json());
 // const MenuItem= require('./models/MenuItem');
 const PORT = process.env.PORT || 3000;
 app.get('/', function (req, res) {
-  res.send('Hello World ttt')
+  res.send('Hello World My First API in Node JS')
 })
 // app.get('/chicken', function (req, res) {
 //     res.send('Welcome to checken')
